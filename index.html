@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter to My Crush</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0e5ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+
+        .letter {
+            font-size: 24px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="letter" id="letter"></div>
+    </div>
+    <script>
+        const letterContent = `
+Hey Jessa,
+
+How was your day? I just wanted to take a moment to express how much you mean to me. Every time you smile, my day gets a little brighter.
+
+You have this incredible way of making everything seem more beautiful. I can’t help but smile when I think of you.
+
+I just wanted you to know that you're special to me, and I really enjoy every moment we share.
+
+I'm looking for everyday.
+
+Warmly,
+Adrian
+`;
+
+        const letterElement = document.getElementById('letter');
+
+        function typeLetter(text, index = 0) {
+            if (index < text.length) {
+                letterElement.textContent += text[index];
+                setTimeout(() => typeLetter(text, index + 1), 50); // Adjust typing speed here
+            }
+        }
+
+       
+            letterElement.textContent = ''; // Clear the letter before starting
+            typeLetter(letterContent);
+
+    </script>
+</body>
+</html>
